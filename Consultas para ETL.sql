@@ -19,3 +19,11 @@ ORDER BY A.CustomerID;
 SELECT TerritoryID,
 	   Name
 FROM Sales.SalesTerritory ;
+
+--CONSULTA DEL TIEMPO---------------------------------------------------------------------------
+SELECT  ROW_NUMBER() OVER(ORDER BY OrderDate ASC) tiempoId, SalesOrderID,
+		CONVERT(DATE, OrderDate) OrderDate, DATEPART(YEAR, OrderDate) AÑO, 
+		DATEPART(MONTH, OrderDate) MES, DATEPART(DAY, OrderDate) DIA,
+		CONVERT(DATE, ShipDate) ShipDate,DATEPART(YEAR, ShipDate) AÑO, 
+		DATEPART(MONTH, ShipDate) MES, DATEPART(DAY, ShipDate) DIA 
+FROM SALES.SalesOrderHeader ;
