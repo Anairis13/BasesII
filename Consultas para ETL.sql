@@ -27,3 +27,13 @@ SELECT  ROW_NUMBER() OVER(ORDER BY OrderDate ASC) tiempoId, SalesOrderID,
 		CONVERT(DATE, ShipDate) ShipDate,DATEPART(YEAR, ShipDate) AÑO, 
 		DATEPART(MONTH, ShipDate) MES, DATEPART(DAY, ShipDate) DIA 
 FROM SALES.SalesOrderHeader ;
+
+--CONSULTA PARA DETALLES DE ORDEN DE VENTA------------------------------------------------------------------
+SELECT  B.SalesOrderDetailID AS DETALLE_ORDEN_ID, 
+		A.Name AS NOMBRE_PRODUCTO, 
+		A.Color AS COLOR, 
+		A.Size AS TALLA_PRODUCTO, 
+		B.UnitPrice AS PRECIO
+FROM Production.Product A
+INNER JOIN Sales.SalesOrderDetail B
+	ON A.ProductID = B.ProductID;
