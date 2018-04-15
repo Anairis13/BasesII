@@ -21,13 +21,12 @@ SELECT TerritoryID,
 FROM Sales.SalesTerritory ;
 
 --CONSULTA DEL TIEMPO---------------------------------------------------------------------------
-SELECT  ROW_NUMBER() OVER(ORDER BY OrderDate ASC) tiempoId, SalesOrderID,
-		CONVERT(DATE, OrderDate) OrderDate, DATEPART(YEAR, OrderDate) AÑO, 
-		DATEPART(MONTH, OrderDate) MES, DATEPART(DAY, OrderDate) DIA,
-		CONVERT(DATE, ShipDate) ShipDate,DATEPART(YEAR, ShipDate) AÑO, 
-		DATEPART(MONTH, ShipDate) MES, DATEPART(DAY, ShipDate) DIA 
+SELECT  SalesOrderID,
+		CONVERT(DATE, OrderDate) OrderDate, DATEPART(DAY, OrderDate) DIA, 
+		DATEPART(MONTH, OrderDate) MES, DATEPART(YEAR, OrderDate) AÑO,
+		CONVERT(DATE, ShipDate) ShipDate,DATEPART(DAY, ShipDate) DIA, 
+		DATEPART(MONTH, ShipDate) MES, DATEPART(YEAR, ShipDate) AÑO 
 FROM SALES.SalesOrderHeader ;
-
 --CONSULTA PARA DETALLES DE ORDEN DE VENTA------------------------------------------------------------------
 SELECT  B.SalesOrderDetailID AS DETALLE_ORDEN_ID, 
 		A.Name AS NOMBRE_PRODUCTO, 
