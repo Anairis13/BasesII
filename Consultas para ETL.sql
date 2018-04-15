@@ -1,6 +1,6 @@
 --------------------------CONSULTA CLIENTES--------------------------------------------------------
 
- SELECT A.CustomerID,
+ SELECT A.CustomerID as CLIENTE_ID,
 	   CONCAT(D.FirstName,' ',D.LastName) as NOMBRE_CLIENTE
 FROM Sales.Customer A
 INNER JOIN Sales.SalesTerritory B
@@ -10,6 +10,7 @@ INNER JOIN Sales.Store C
 INNER JOIN Person.Person D
 	ON A.PersonID = D.BusinessEntityID
 ORDER BY A.CustomerID;
+
 
 
 
