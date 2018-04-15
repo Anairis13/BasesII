@@ -25,6 +25,29 @@ ON (A.BusinessEntityID=C.BusinessEntityID);
 
 
 
+-------------------------------------------------CONSULTA PRODUCTOS_X_VENTA-------------------------------------------
+SELECT  ROW_NUMBER() OVER(ORDER BY  a.ProductID  ASC) ID,
+		B.SalesOrderID AS DETALLE_ORDEN_ID,
+        a.ProductID AS PRODUCTO_ID,
+		A.Name AS NOMBRE_PRODUCTO, 
+		A.Color AS COLOR_PRODUCTO, 
+		A.Size AS TALLA_PRODUCTO, 
+		B.UnitPrice AS PRECIO_PRODUCTO
+FROM Production.Product A
+INNER JOIN Sales.SalesOrderDetail B
+ON A.ProductID = B.ProductID;
+
+SELECT * FROM Production.Product;
+
+
+
+-------------------------------------------------CONSUTA VENTAS_ORDENES_DETALLES-----------------------------------
+SELECT 
+	SalesOrderID AS DETALLE_ORDEN_ID
+FROM Sales.SalesOrderHeader 
+
+
+
 
 ------------------------------FECHAS_COMPRAS---------------------------------------------------------------
 SELECT  SalesOrderID AS FECHA_ID,
@@ -34,22 +57,6 @@ SELECT  SalesOrderID AS FECHA_ID,
 		DATEPART(MONTH, ShipDate) MES_ENVIO, DATEPART(YEAR, ShipDate) AÑO_ENVIO
 FROM SALES.SalesOrderHeader ;
 
-
-
-
-
-----------------------------ORDEN_DETALLES_VENTAS------------------------------------------------------------
-
-SELECT  B.SalesOrderDetailID AS DETALLE_ORDEN_ID,
-		B.SalesOrderID AS VENTA_ID,
-        a.ProductID AS PRODUCTO_ID,
-		A.Name AS NOMBRE_PRODUCTO, 
-		A.Color AS COLOR_PRODUCTO, 
-		A.Size AS TALLA_PRODUCTO, 
-		B.UnitPrice AS PRECIO_PRODUCTO
-FROM Production.Product A
-INNER JOIN Sales.SalesOrderDetail B
-ON A.ProductID = B.ProductID;
 
 
 
@@ -106,6 +113,6 @@ WITH A AS (
   INNER JOIN SALES.STORE C
   ON (B.StoreID= C.BusinessEntityID)
 )
-SELECT A.SalesOrderID AS VENTA_ID,   B.TIENDA_ID, B.CLIENTE_ID, B.EMPLEADO_ID, B.TERRITORIO_ID, B.METODO_ENVIO_ID,  A.SalesOrderID as FECHA_ID, A.TOTAL_VENTA, A.TOTAL_PRODUCTOS_VENDIDOS
+SELECT A.SalesOrderID AS VENTA_ID,   B.TIENDA_ID, B.CLIENTE_ID, B.EMPLEADO_ID, B.TERRITORIO_ID, B.METODO_ENVIO_ID,  A.SalesOrderID as FECHA_ID, A.SalesOrderID AS DETALLES_VENTA_ID, A.TOTAL_VENTA, A.TOTAL_PRODUCTOS_VENDIDOS
 FROM A,B
 WHERE A.SalesOrderID=B.SalesOrderID;
