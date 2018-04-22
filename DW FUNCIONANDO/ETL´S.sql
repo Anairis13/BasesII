@@ -65,6 +65,16 @@ WHERE A.SalesOrderID=B.SalesOrderID;
 
 
 
+
+
+----------------------------------DETALLES_ORDEN_VENTA-----------------------------------------------
+SELECT 
+	SalesOrderID AS DETALLE_ORDEN_ID
+FROM Sales.SalesOrderHeader
+WHERE CustomerID!='' AND SalesPersonID!='';
+
+
+
 ------------------------------FECHAS_COMPRAS---------------------------------------------------------------
 SELECT  SalesOrderID AS FECHA_ID,
 		CONVERT(DATE, OrderDate) FECHA_VENTA, DATEPART(DAY, OrderDate) DIA_VENTA, 
