@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{22225C2B-ED0C-4461-AEFC-FD6A9CEC1CF3}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{7207E795-B842-4142-97D6-3D199D91EF31}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3896,7 +3896,7 @@ WHERE CustomerID!='' AND SalesPersonID!='';</property>
         <NodeLayout
           Size="217,42"
           Id="Package\Data Flow Task\DESTINO FECHAS_COMPRAS"
-          TopLeft="1253.35714285714,262.222222222222" />
+          TopLeft="968.35714285714,500.972222222222" />
         <NodeLayout
           Size="211,42"
           Id="Package\Data Flow Task\DESTINO HECHOS_VENTAS"
@@ -3956,7 +3956,7 @@ WHERE CustomerID!='' AND SalesPersonID!='';</property>
         <NodeLayout
           Size="165,42"
           Id="Package\Data Flow Task\Data Conversion 2 2"
-          TopLeft="1282.02380952381,190.444444444444" />
+          TopLeft="997.02380952381,429.194444444444" />
         <NodeLayout
           Size="205,42"
           Id="Package\Data Flow Task\ORIGEN HECHOS_VENTAS"
@@ -3964,7 +3964,7 @@ WHERE CustomerID!='' AND SalesPersonID!='';</property>
         <NodeLayout
           Size="211,42"
           Id="Package\Data Flow Task\ORIGEN FECHAS_COMPRAS"
-          TopLeft="1261.35714285714,121.222222222222" />
+          TopLeft="976.35714285714,359.972222222222" />
         <NodeLayout
           Size="175,42"
           Id="Package\Data Flow Task\Data Conversion 2 5"
@@ -4101,7 +4101,7 @@ WHERE CustomerID!='' AND SalesPersonID!='';</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
-          TopLeft="1363.19047619048,232.444444444444">
+          TopLeft="1078.19047619048,471.194444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4189,7 +4189,7 @@ WHERE CustomerID!='' AND SalesPersonID!='';</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output5]"
-          TopLeft="1365.69047619048,163.222222222222">
+          TopLeft="1080.69047619048,401.972222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
